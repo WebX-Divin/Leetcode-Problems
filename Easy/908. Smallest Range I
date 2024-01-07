@@ -1,0 +1,16 @@
+Worst explanation given by leetcode for this problem, Here is the detailed explaination
+We want to get minimum difference between maximum and minimum elements in an array, then we need to add k value range from -k to k.
+First find the maximum and minimum in an array then subract k to the maximum element and add k to the minimum element.
+
+class Solution {
+    public int smallestRangeI(int[] nums, int k) {
+        int min = nums[0];
+        int max = nums[0];
+        for(int i=1;i<nums.length;i++){
+            min = Math.min(min, nums[i]);
+            max = Math.max(max, nums[i]);
+        }
+        int result = (max - k) - (min + k);
+        return result < 0 ? 0 : result;
+    }
+}
