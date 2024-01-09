@@ -1,0 +1,10 @@
+class Solution {
+    public int totalMoney(int n) {
+        int wCount = n / 7;
+        int rDays = n % 7;
+        int total = ((wCount * (wCount -1)) / 2) * 7; //Complete week
+        total += wCount * 28; //Additional on Monday
+        total += ((rDays * (rDays + 1)) / 2) + (wCount * rDays);
+        return total;
+    }
+}
