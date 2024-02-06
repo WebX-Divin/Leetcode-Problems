@@ -1,0 +1,17 @@
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        if(strs == null || strs.length == 0) return Collections.emptyList();
+        Map<String, List<String>> map = new HashMap<>();
+        for(String s : strs){
+            char[] fre = new char[26];
+            for(int i=0;i<s.length();i++){
+                fre[s.charAt(i) - 'a']++;
+            }
+            String key = new String(fre);
+            List<String> list = map.getOrDefault(key, new LinkedList<String>());
+            list.add(s);
+            map.put(key,list);
+        }
+        return new LinkedList<>(map.values());
+    }
+}
