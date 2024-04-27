@@ -13,3 +13,7 @@ class Solution {
         return original == reverse;
     }
 }
+
+//121 - A number which is reversed and still get the same value then it is palindrome.
+
+//Malayalam - Same thing applied for the characters too.
